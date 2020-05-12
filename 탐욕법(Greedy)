@@ -1,0 +1,28 @@
+'''
+# 탐욕법이란?
+
+
+
+
+
+
+# 내풀이
+def solution(number, k):
+    answer = ''
+    number= list(number)
+    line = len(number) -  k
+    print(line)
+    i = 0
+    while len(number) > line:        
+        if number[i] < number[i+1]:
+            number.pop(i)
+            i -=1
+        else:
+            i +=1
+        if i == line:
+            number.pop(i)
+            i -=1
+        print(number)
+    return ''.join(number)
+
+## 테스트 케이스 10번 통과 못함
